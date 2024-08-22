@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    width: 1000px;
+    height: 200px;
+}
+
+header img {
+    width: 1000px;
+    height: 200px;
+}
+
+nav {
+    width: 1000px;
+    height: 100px;
+    background-color: beige;
+}
+
+section {
+    width: 1000px;
+    height: 400px;
+    background-color: bisque;
+}
+
+section img {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+article {
+    width: 1000px;
+    height: 200px;
+    background-color: aqua;
+}
+
+aside {
+    width: 1000px;
+    height: 200px;
+    background-color: blueviolet;
+}
+
+footer {
+    width: 1000px;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+footer img {
+    width: 1000px;
+    height: 200px;
+}
