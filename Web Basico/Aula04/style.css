@@ -1,0 +1,60 @@
+/* Estilos básicos para a página */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+
+/* Estilos para o formulário */
+
+form {
+    max-width: 100%; /* Limita a largura do formulário */
+    margin: auto; /* Centraliza o formulário na página */
+}
+
+
+fieldset {
+    border: 1px solid #ddd; /* Borda ao redor do fieldset */
+    padding: 10px; /* Espaçamento interno do fieldset */
+    margin-bottom: 20px; /* Espaçamento abaixo de cada fieldset */
+}
+
+
+legend {
+    font-weight: bold; /* Legenda do fieldset em negrito */
+    margin-bottom: 10px; /* Espaçamento abaixo da legenda */
+}
+
+
+label {
+    display: block; /* Exibe o label como um bloco */
+    margin: 10px 0 5px; /* Espaçamento acima e abaixo do label */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 95%; /* Campos ocupam toda a largura disponível */
+    padding: 8px; /* Espaçamento interno dos campos */
+    margin-bottom: 10px; /* Espaçamento abaixo de cada campo */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+}
+
+
+button {
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Cor do texto branca */
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+}
+
+
+button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+}

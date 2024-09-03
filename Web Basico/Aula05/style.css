@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px;
+}
+
+.box_header {
+    width: 200px;
+    float: left;
+    padding-top: 5px;
+}
+
+.box_header img {
+    width: 100%;
+}
+
+nav {
+    background-color: bisque;
+    width: 100%;
+    clear: both;
+}
+
+li {
+    display: inline-flex;
+    margin: 10px;
+    list-style: none;
+}
+
+ol {
+    text-align: center;
+}
+
+/* Link padrão */
+a:link {
+    color: blue;
+    text-decoration: none;
+    font-size: larger;
+}
+
+/* Link quando o mouse está passando por cima */
+a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+/* Link ativo (quando está sendo clicado) */
+a:active {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Link visitado */
+a:visited {
+    color: rgb(183, 3, 3);
+}
+
+/* Link com foco (quando selecionado via teclado ou mouse) */
+a:focus {
+    outline: 2px dotted blue;
+    outline-offset: 2px;
+}
+
+.box_info {
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+    float: left;
+    margin: 14px;
+    border-radius: 10px;
+}
+
+.box_info img {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.neo_box_info {
+    width: 450px;
+    height: auto;
+    float: left;
+    margin: 20px;
+    text-align: center;
+    background-color: bisque;
+    border-radius: 20px;
+    padding-top: 5px;
+}
+
+.neo_box_info img {
+    width: 100px;
+    height: 100px;
+}
+
+p {
+    text-align: justify;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: bisque;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    clear: both;
+}
+
+.logo {
+    border-radius: 10px;
+}
