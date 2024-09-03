@@ -1,10 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        form {
+            max-width: 100%;
+            margin: auto;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"],
+        input[type="url"],
+        input[type="range"],
+        input[type="color"],
+        select,
+        textarea {
+            width: 98%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #34A049;
+        }
+
+        .inline {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+    </style>
 </head>
 <body>
+    <div id="container">
+        <header>
+            <div class="box_header" style="float:left;"><img src="img/logo.webp" alt="elmo logo" class="logo"></div>
+            <div class="box_header" style="float:right;">
+                <p>
+                    Rua dos Alfeneiros, 215 <br>
+                    Tel (41) 99999-0000 <br>
+                    <img src="img/redes.png" alt="redes" class="logo">
+                </p>
+            </div>
 
+            <nav>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quemsomos.html">Quem somos</a></li>
+                    <li><a href="servicosprestados.html">Serviços Prestados</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ol>
+            </nav>
+        </header>
+
+        <section>
+            <h1>Formulário</h1>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+
+                    <label for="nome">Nome: </label>
+                    <input type="text" name="nome" id="nome" required>
+
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" required>
+
+                    <label for="telefone">Telefone: </label>
+                    <input type="tel" name="telefone" id="telefone" required>
+
+                    <label for="senha">Senha: </label>
+                    <input type="password" name="senha" id="senha" required>
+
+                    <label for="confirma_senha">Confirme a senha: </label>
+                    <input type="password" name="senha" id="senha">
+                </fieldset>
+                <fieldset>
+                    <legend>Detalhes adicionais</legend>
+                    
+                    <label for="data_nascimento">Data de Nascimento: </label>
+                    <input type="date" name="data_nascimento" id="data_nascimento">
+
+                    <label for="horario_preferido">Horario Preferido: </label>
+                    <input type="time" name="horario_preferido" id="horario_preferido">
+
+                    <label for="quantidade">Quantidade: </label>
+                    <input type="number" name="quantidade" id="quantidade" min="1" max="10">
+
+                    <label for="website">Site Favorito: </label>
+                    <input type="url" name="website" id="website">
+
+                    <label for="range">Nível de Satisfação: </label>
+                    <input type="range" name="range" id="range">
+
+                    <label for="cor">Cor favorita: </label>
+                    <input type="color" name="cor" id="cor">
+
+                    <label for="mensagem">Mensagem: </label>
+                    <textarea name="mensagem" id="mensagem" rows="8"></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Preferencias</legend>
+
+                    <div class="inline">
+                        <label>
+                            <input type="radio" name="contato_preferido" value="email" checked> E-mail
+                        </label>
+                    </div>
+                    <div class="inline">
+                        <label>
+                            <input type="radio" name="contato_preferido" valeu="telefone"> Telefone
+                        </label>
+                    </div>
+                    
+                    <div class="inline">
+                        <label>
+                            <input type="checkbox" name="notificacoes" value="sms"> Receber SMS
+                        </label>
+                    </div>
+                    <div class="inline">
+                        <label>
+                            <input type="checkbox" name="notificacoes" value="email"> Receber E-mail
+                        </label>
+                    </div>
+                    
+                    <label for="curso">Curso: </label>
+                    <select name="curso" id="curso">
+                        <option value="engenharia">Engenharia</option>
+                        <option value="arquitetura">Arquitetura</option>
+                        <option value="design">Design</option>
+                    </select>
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <footer>
+            <p>Rua das Acácias, 123 Bairro Jardim Primavera São Paulo - SP, 04565-890 Brasil</p>
+            <br>
+            <p>Feito em Aula :D</p>
+        </footer>
+    </div>
 </body>
 </html>
