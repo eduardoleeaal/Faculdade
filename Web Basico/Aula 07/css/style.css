@@ -1,0 +1,127 @@
+/*reset css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+
+/*configuração geral de body*/
+body {
+    background-color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    border: solid 3px black;
+    width: 100%;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+p {
+    color: #0000009c;
+}
+
+li {
+    list-style: none; /*retira das listas os números ou bullet-points*/
+}
+
+section, footer { /*inserir cor de fundo para teste e depois retirar*/
+    padding: 54px 0;
+    /*margem interna de 54 pixels para cima e para baixo
+   e 0 para esquerda e direita*/
+}
+
+/*header*/
+header {
+    background-position: center; /*posicionamento para imagem de fundo*/
+    background-size: cover;
+    /*ocupa toda a altura e largura disponível em
+   header*/
+    background-attachment: fixed;
+    /*cria um efeito parallax na imagem de
+    fundo*/
+}
+
+/*nav (dentro de header)*/
+nav {
+    display: flex;
+    /*a partir do elemento pai, deixa os elementos filhos um
+    ao lado do outro */
+    align-items: center; /*alinha os elementos no eixo x*/
+    justify-content: space-between;
+    /*distribui os elementos pelo espaço
+    disponível*/
+    padding-top: 30px; /*margem interna vinda do topo*/
+}
+
+nav ul {
+    /*temos aqui um seletor de precedência, toda vez que ul estiver em
+    nav terá o comportamento determinado nos códigos abaixo*/
+    display: flex;
+    align-items: center;
+}
+
+nav ul a {
+    color: #ffffff; /*cor do texto*/
+    margin: 0 25px;
+    /*margem externa, 0 para cima e pra baixo e 25 para
+    esquerda e direita*/
+    text-transform: uppercase; /*manter o texto maiúsculo*/
+    font-size: 14px; /*tamanho da fonte*/
+    display: block; /*comportamento de bloco*/
+}
+
+/*aplicar depois*/
+nav ul a::after { /*atenção aos dois pontos repetidos*/
+    background-color: #93911a;
+    height: 5px;
+    width: 0;
+    /*aqui exste uma relação com a sessão css abaixo, a
+    animação partirá do width:0 até o width 100 na próxima sessão*/
+    display: block;
+}
+
+nav ul a:hover:not(.btn)::after {
+    /*a indicação ':not(.btn)' retira o
+   efeito de animação do link que está inserido na classe .btn*/
+    width: 100%;
+    transition: 0.2s;
+    margin: 0 auto; /*faz a animação do link começar pelo centro*/
+}
+
+/*Estilização de botão - ainda em header*/
+.btn {
+    background-color: #4f9cf9;
+    color: #ffffff;
+    padding: 15px 20px; /*15 para cima e pa baixo e 20 para as laterais*/
+    border-radius: 10px; /*arredondamento de borda*/
+    cursor: pointer; /*manter a integridade do cursor*/
+    display: inline-block; /*manter padrão em linha dentro de um bloco*/
+    transition: 0.5s; /*tempo de transição para mudança de cor*/
+}
+
+.btn:hover {
+    background-color: #3580db;
+}
+
+/*btn animate aplicar depois*/
+.btn.animate-btn:hover {
+    /* Aqui temos a classe .animate-btn como dependente do
+    seletor de precedência .btn, é preciso tomar cuidado, um único espaço aqui
+    entre os caracteres invalida a animação*/
+    animation: animate_outline 1s ease-out infinite;
+}
+
+@keyframes animate_outline {
+    from {
+        outline: 0 solid #4f9bf98a;
+    }
+    to {
+        outline: 15px solid #4f9bf900;
+    }
+}
