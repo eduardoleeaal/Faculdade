@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urubuzinho</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="./assets/imgs/icone.ico" type="image/x-icon">
+    <style>
+
+        #logo{
+    width: 6em;
+    height: 6em;
+    margin-left: 4em;
+    margin-top: -0.5em;
+    }
+
+    li a{
+    color: black;
+    }
+
+    li a:hover{
+    color: gray;
+    }
+
+    </style>
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="como-jogar.html">Como Jogar</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="login.html"><i style="font-size: 1.2em;" class="fa-solid fa-user"></i></a></li>
+                <li>Saldo: <span id="mostrarCreditos">100</span></li>                               
+            </ul>
+            <a href="index.html"><img id="logo" src="./assets/imgs/LOGO.png"></a>
+        </nav>
+
+        <h2 id="slogan">DESCUBRA OS PODERES DA SORTE</h2>
+
+    </header>
+    <!--/HEADER-->
+     
+
+    <!--JOGO-->
+    <section class="jogo">
+        
+        <div id="containerj">
+            <button id="maior">Maior</button>
+            <div id="nums">
+
+                <div id="sorteio">
+                    <br>
+                    <br>
+                    <p id="numeroSorteado">000</p>
+                </div>
+
+            <div id="numselect">
+                <br>
+                <input type="number" step="10" id="numeroEscolhido">
+            </div>
+
+            </div>
+            <button id="menor">Menor</button>
+
+        </div>
+
+    </section>
+    <!--\JOGO-->
+
+    <article class="artigoMaiorMenor">
+        <div class="titulo">
+        <h1>Bem-vindo ao Nosso Jogo de Maior ou Menor!</h1>
+        </div>
+
+        <div class="conteudoArtigo">
+            <p style="width: 22em; padding: 8em; margin-top: 1.5em;" id="textoArtigo">Testar sua sorte e habilidade nunca foi tão emocionante! No nosso exclusivo jogo de Maior ou Menor, você escolhe um número de 0 a 1000 e tenta adivinhar se ele é maior ou menor que o número sorteado pelo computador. É um desafio simples, mas cheio de adrenalina e estratégia!</p>
+            <img src="./assets/imgs/desenhoUrubu.png" id="desenho">
+        </div>
+
+    </article>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/williamhgates/"><i class="fa-brands fa-linkedin"></i><a>
+             </li>
+            <li>
+                <a href="https://github.com/dmalan"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/eduardo.leal.5015"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+        </ul>
+        <img src="./assets/imgs/LOGO2.png" alt="logo" id="logo2">
+    </footer>
+    <!--\FOOTER-->
+</body>
+<script src="./assets/script.js"></script>
+<script src="./assets/modalscript.js"></script>
+</html>

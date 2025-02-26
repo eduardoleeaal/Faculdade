@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Jogar</title>
+    <link rel="stylesheet" href="./assets/comojogarstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="./assets/imgs/icone.ico" type="image/x-icon">
+    <style>
+
+        #logo{
+    width: 6em;
+    height: 6em;
+    margin-left: 4em;
+    margin-top: -0.5em;
+    }
+
+    li a{
+    color: black;
+    }
+
+    li a:hover{
+    color: gray;
+    }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="como-jogar.html">Como Jogar</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="login.html"><i style="font-size: 1.2em;" class="fa-solid fa-user"></i></a></li>
+                <li>Saldo: <span id="mostrarCreditos">100</span></li>                               
+            </ul>
+            <a href="index.html"><img id="logo" src="./assets/imgs/LOGO.png"></a>
+        </nav>
+    </header>
+
+    <article class="comojogar">
+        <h1 style="margin-right: 2em;">COMO JOGAR</h1> 
+        <div id="containerTexto">
+            <button id="btn">ClIQUE AQUI!!!</button>
+
+            <!--Janela Modal-->
+            <aside class="modal">
+                <div class="conteudo">
+                    <h2>Objetivo do Jogo</h2>
+                    <ul>
+                        <li>Escolher um número entre 0 e 1000.</li>
+                        <li>O número escolhido é comparado com um número sorteado pelo computador.</li>
+                    </ul>
+                    <h2>Regras do Jogo</h2>
+                    <ul>
+                        <li>O jogador indica se seu número é maior ou menor que o número sorteado.</li>
+                        <li>Se o jogador acertar a indicação, ganha 2 pontos.</li>
+                        <li>Se o jogador errar a indicação, perde 2 pontos.</li>
+                    </ul>
+                    <h2>Pontuação</h2>
+                    <ul>
+                        <li>+2 pontos por acerto.</li>
+                        <li>-2 pontos por erro.</li>
+                    </ul>
+                    <h2>Finalização</h2>
+                    <ul>
+                        <li>O jogo pode seguir indefinidamente, acumulando pontos, ou até que o jogador decida parar.</li>
+                    </ul>
+                </div>
+            </aside>
+            <!--Fim Janela Modal-->
+    </article>
+    <!--FOOTER-->
+    <footer class="footer">
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/williamhgates/"><i class="fa-brands fa-linkedin"></i><a>
+             </li>
+            <li>
+                <a href="https://github.com/dmalan"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/eduardo.leal.5015"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+        </ul>
+        <img src="./assets/imgs/LOGO2.png" alt="logo" id="logo2">
+    </footer>
+    <!--/FOOTER-->
+</body>
+<script src="./assets/modalscript.js"></script>
+</html>

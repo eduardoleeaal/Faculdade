@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nós</title>
+    <link rel="stylesheet" href="./assets/style-sobre.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="./assets/imgs/icone.ico" type="image/x-icon">
+    <style>
+
+        #logo{
+    width: 6em;
+    height: 6em;
+    margin-left: 4em;
+    margin-top: -0.5em;
+    }
+
+    li a{
+    color: black;
+    }
+
+    li a:hover{
+    color: gray;
+    }
+    
+    </style>
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="como-jogar.html">Como Jogar</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="login.html"><i style="font-size: 1.2em;" class="fa-solid fa-user"></i></a></li>
+                <li>Saldo: <span id="mostrarCreditos">100</span></li>
+            </ul>
+            <a href="index.html"><img id="logo" src="./assets/imgs/LOGO.png"></a>
+        </nav>
+
+        <h2 id="slogan">DESCUBRA OS PODERES DA SORTE</h2>
+    </header>
+    <!--/HEADER-->
+
+    <!-- Área do Slide -->
+    <section>
+    <div id="slide">
+        <img src="./assets/imgs/img1.jpg" class="active" alt="Slide 1">
+        <img src="./assets/imgs/img2.png" alt="Slide 2">
+        <img src="./assets/imgs/img3.png" alt="Slide 3">
+        <img src="./assets/imgs/gaulesanao.gif" alt="Slide 4">
+            
+    </div>
+    <!--FIM SLIDE-->
+    <br>
+
+    <!-- Botões para Navegar -->
+    <div class="navegacao">
+        <button onclick="mudarSlide(-1)">←</button>
+        <button onclick="mudarSlide(1)">→</button>
+    </div>
+    </section>
+    
+    <!-- SEÇÃO SOBRE -->
+    <main id="sobre">
+        <h2 style="font-size: 180%;">SOBRE NÓS</h2>
+        <p>
+            Bem-vindo ao Urubuzinho, um projeto desenvolvido por estudantes de Web Básico da
+            Universidade Positivo. Nosso site foi criado como parte de um desafio de aprendizado, unindo programação e
+            criatividade para oferecer uma experiência divertida e educativa em um ambiente seguro e inovador.
+        </p>
+        <br>
+        <p>
+            Aqui, você encontrará um jogo clássico de apostas, uma seção com informações gerais de como jogar e uma seção de login
+        </p>
+        <br>
+        <p>
+            Esse projeto é fruto de muita dedicação e colaboração. Esperamos que você se divirta explorando o que criamos tanto quanto nos divertimos
+            desenvolvendo!
+        </p>
+    </main>
+    <!-- FIM SEÇÃO SOBRE -->
+    <!-- FOOTER -->
+    <footer class="footer">
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/williamhgates/"><i class="fa-brands fa-linkedin"></i><a>
+             </li>
+            <li>
+                <a href="https://github.com/dmalan"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/eduardo.leal.5015"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+        </ul>
+        <img src="./assets/imgs/LOGO2.png" alt="logo" id="logo2">
+    </footer>
+    <!--/FOOTER-->
+
+    <script src="./assets/script-sobre.js"></script>
+</body>
+</html>

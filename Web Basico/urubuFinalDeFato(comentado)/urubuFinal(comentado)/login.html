@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./assets/stylelogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="./assets/imgs/icone.ico" type="image/x-icon">
+    <style>
+
+        #logo{
+    width: 6em;
+    height: 6em;
+    margin-left: 4em;
+    margin-top: -0.5em;
+    }
+
+    li a{
+    color: black;
+    }
+
+    li a:hover{
+    color: gray;
+    }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="como-jogar.html">Como Jogar</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="login.html"><i style="font-size: 1.2em;" class="fa-solid fa-user"></i></a></li>
+                <li>Saldo: <span id="mostrarCreditos">100</span></li>                               
+            </ul>
+            <a href="index.html"><img id="logo" src="./assets/imgs/LOGO.png"></a>
+        </nav>
+    </header>
+
+    <main style="width: auto; height: 75em;">
+        <div class="formsContainer">
+            <form class="forms">
+                <i class="fa-regular fa-user" style="margin-right: 1em;"></i><input type="text" id="login" placeholder="Login"><br><br><br>
+                <i class="fa-solid fa-lock" style="margin-right: 1em;"></i><input type="password" id="senha" placeholder="Senha"><br><br><br>
+                <button id="btn" style="cursor: pointer;">Entrar</button>
+              </form>
+        </div>
+    </main>
+    <!--FOOTER-->
+    <footer class="footer">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/williamhgates/"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/dmalan"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.facebook.com/eduardo.leal.5015"><i class="fa-brands fa-facebook"></i></a></li>
+        </ul>
+        <img src="./assets/imgs/LOGO2.png" alt="logo" id="logo2">
+    </footer>
+    <!--/FOOTER-->
+</body>
+<script src="./assets/scriptlogin.js"></script>
+</html>

@@ -1,0 +1,66 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: grid; /* Ativando o CSS Grid */
+    grid-template-columns: 1fr 2fr 1fr; /* Configurando três colunas */
+    grid-template-rows: auto 1fr auto; /* Configurando três linhas */
+    gap: 10px; /* Espaço entre os itens */
+    max-width: 800px;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos dos itens */
+.item {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Posicionamento específico dos itens */
+.item1 {
+    grid-column: 1 / -1; /* Ocupa todas as colunas (Cabeçalho) */
+}
+
+.item2 {
+    grid-column: 1 / 2; /* Ocupa a primeira coluna (Menu) */
+}
+
+.item3 {
+    grid-column: 2 / 3; /* Ocupa a segunda coluna (Conteúdo principal) */
+}
+
+.item4 {
+    grid-column: 3 / 4; /* Ocupa a terceira coluna (Informações extras) */
+}
+
+.item5 {
+    grid-column: 1 / -1; /* Ocupa todas as colunas (Rodapé) */
+}
+
+/*
+Explicação do CSS Grid:
+
+display: grid; ativa o CSS Grid para a .container.
+grid-template-columns: 1fr 2fr 1fr; define três colunas. A primeira e a terceira colunas têm largura igual (1fr cada), e a coluna do meio ocupa o dobro do espaço (2fr).
+grid-template-rows: auto 1fr auto; cria três linhas. As linhas superior e inferior (auto) ajustarão sua altura automaticamente com base no conteúdo, enquanto a linha do meio (1fr) ocupa o restante do espaço.
+gap: 10px; cria um espaço de 10px entre os itens da grade.
+Explicação das classes item1, item2, etc.:
+
+.item1 e .item5: ambas ocupam toda a largura da grade, sendo usadas para o cabeçalho e rodapé, respectivamente. grid-column: 1 / -1; significa que essas divs vão da primeira coluna até a última.
+.item2, .item3, .item4: essas classes são para o menu, conteúdo principal e informações extras. Cada uma ocupa uma coluna específica da grade.
+*/

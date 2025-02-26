@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p{
+    font-size: 120%;
+}
+
+header{
+    width: auto;
+    height: 30em;
+    background-image: url('./imgs/background0.png');
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+nav ul{
+    float: right;
+    margin-top: 1.8em;
+
+}
+
+nav ul li{
+    display: inline;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+li a{
+    color: black;
+}
+
+li a:hover{
+    color: gray;
+}
+
+#logo{
+    width: 6em;
+    height: 6em;
+    margin-left: 4em;
+    margin-top: -0.5em;
+}
+
+#slogan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    font-size: 40px;
+}
+
+.carrossel{
+    width: auto;
+    height: 35em;
+}
+
+.imgs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#img{
+    width: 65em;
+    height: 35em;
+    cursor: pointer;
+    
+}
+
+.jogo{
+    width: auto;
+    height: 40em;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+#containerj {
+    width: 80em;
+    height: 30em;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(95, 95, 95));
+    border-radius: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#maior{
+    width: 20em;
+    height: 4em;
+    margin-left: 8em;
+    margin-top: 20em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 0.8em;
+}
+
+#maior:hover {
+    animation: pular 0.5s ease-in-out forwards;
+}
+
+#menor{
+    width: 20em;
+    height: 4em;
+    margin-right: 8em;
+    margin-top: 20em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 0.8em;
+}
+
+#menor:hover {
+    animation: pular 0.5s ease-in-out forwards;
+}
+
+@keyframes pular { /*Define animação de botão saltando*/
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Salto para cima */
+    }
+    
+}
+
+#numselect{
+    margin-top: 8.2em;
+    width: 20em;
+    height: 4em;
+    background-color: black;
+    border-radius: 5em;
+    text-align: center;
+    margin-left: 8.5em;
+
+}
+
+#sorteio{
+    width: 40em;
+    height: 6em;
+    background-color: white;
+    border-radius: 5em;
+    text-align: center;
+}
+
+.artigoMaiorMenor{
+    width: auto;
+    height: 30em;
+    background-color: black;
+    color: white;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+
+.conteudoArtigo{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+@keyframes levitar { /*Define animação de levitar*/
+    0% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-8px); /* Levita para cima */
+    }
+    100% {
+        transform: translateY(0); /* Retorna à posição original */
+    }
+}
+
+#desenho{
+    width: 30em;
+    height: 30em;
+    display: flex;
+    animation: levitar 1.2s ease-in-out infinite;
+}
+
+
+.footer{
+    width: auto;
+    height: 5em;
+    background-color: black
+}
+
+#logo2{
+    margin-top: -2.5em;
+    margin-left: 4em;
+    width: 4em;
+    height: 4em;
+}
+
+.footer ul {
+    list-style: none;
+    margin-right: 4em;
+    display: flex;
+    justify-content: center;
+}
+.footer {
+    align-items: center;
+}
+
+.footer li {
+    margin-left: 3em;
+    margin-top: 1.5em;
+    color: white;
+    font-size: larger;
+}
+
+.footer a{
+    color: white;
+}
+
+.footer a:hover{
+    color: gray;
+}
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Grid Template Areas</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* Container de Grid */
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar main extra"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos de cada área */
+        .header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #FFC107;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .extra {
+            grid-area: extra;
+            background-color: #FF5722;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #9C27B0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Cabeçalho</div>
+        <div class="sidebar">Menu Lateral</div>
+        <div class="main">Conteúdo Principal</div>
+        <div class="extra">Barra Lateral</div>
+        <div class="footer">Rodapé</div>
+    </div>
+</body>
+</html>
+<!--
+grid-template-areas: Define um layout visual usando nomes de áreas. Nesse caso, temos três áreas na primeira linha (header), três áreas na segunda linha (sidebar, main, extra), e uma única área footer na última linha.
+grid-template-columns e grid-template-rows: Define três colunas de largura variável (1fr 2fr 1fr) e três linhas de altura variável (auto 1fr auto).
+Áreas Nomeadas: Cada div recebe uma classe que corresponde a uma área de grid-template-areas.
+Esse exemplo cria um layout com um cabeçalho, rodapé, menu lateral, conteúdo principal, e barra lateral, que se ajusta automaticamente às proporções do grid.
+-->
