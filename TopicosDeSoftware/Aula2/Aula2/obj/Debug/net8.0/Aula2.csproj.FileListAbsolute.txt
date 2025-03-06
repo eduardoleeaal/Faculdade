@@ -1,0 +1,15 @@
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/bin/Debug/net8.0/Aula2
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/bin/Debug/net8.0/Aula2.deps.json
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/bin/Debug/net8.0/Aula2.runtimeconfig.json
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/bin/Debug/net8.0/Aula2.dll
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/bin/Debug/net8.0/Aula2.pdb
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/Aula2.GeneratedMSBuildEditorConfig.editorconfig
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/Aula2.AssemblyInfoInputs.cache
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/Aula2.AssemblyInfo.cs
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/Aula2.csproj.CoreCompileInputs.cache
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/Aula2.sourcelink.json
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/Aula2.dll
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/refint/Aula2.dll
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/Aula2.pdb
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/Aula2.genruntimeconfig.cache
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Aula2/Aula2/obj/Debug/net8.0/ref/Aula2.dll
