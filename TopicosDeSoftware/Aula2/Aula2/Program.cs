@@ -31,6 +31,7 @@ class Program
         ////////////////////////////////////////////////
         // Ex001();
         // Ex002();
+        // Ex003();
     }
 
     /*public static void CalcularImc()
@@ -65,13 +66,45 @@ class Program
     }*/
     
     // Exercício 2
-    private static void Ex002()
+    /*private static void Ex002()
     {
         var input = Console.ReadLine();
         var num = double.Parse(input);
         
         var farenheit = (9 * num + 160) / 5;
         Console.WriteLine($"{num}ºC : {farenheit}ºF");
-    }
+    }*/
+
+    // Exercicio 3
+
+    /*private static void Ex003()
+    {
+        double[] notas = new double[5];
+        int[] pesos = new int[5];
+        int somaPesos = 0;
+        double media = 0;
+
+        for (int i = 0; i < notas.Length; i++)
+        {
+            Console.Write($"Digite o valor da nota {i+1}: ");
+            var input = Console.ReadLine();
+            notas[i] = double.Parse(input);
+
+            Console.Write($"Digite o peso da nota {i+1}: ");
+            input = Console.ReadLine();
+            pesos[i] = int.Parse(input);
+            somaPesos += pesos[i];
+        }
+
+        for (int i = 0; i < notas.Length; i++)
+        {
+            media += notas[i] * pesos[i];
+        }
+
+        media /= somaPesos;
+        Console.WriteLine($"Média ponderada: {media}");
+
+    }*/
+
     
 }
