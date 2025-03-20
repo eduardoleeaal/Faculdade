@@ -1,0 +1,3 @@
+### Teste de aplicação
+
+GET http://localhost:5074/api/carros
