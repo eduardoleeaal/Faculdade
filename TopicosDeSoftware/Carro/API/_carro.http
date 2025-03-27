@@ -1,3 +1,19 @@
 ### Teste de aplicação
 
 GET http://localhost:5074/api/carros
+
+### Cadastrar Carros
+
+POST http://localhost:5074/api/carros
+Content-Type: application/json
+
+{
+    "Name": "HB20 2010"
+}
+
+### BUSCAR CARRO PELO ID
+GET http://localhost:5074/api/carros/1
+
+### DELETE PELO ID
+
+DELETE http://localhost:5074/api/carros/2
