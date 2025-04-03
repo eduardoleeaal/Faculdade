@@ -69,4 +69,24 @@ app.MapDelete("/api/carros/{id}", ([FromRoute] int id,[FromServices] AppDataCont
 
 });
 
+app.MapGet("/api/modelos", ([FromServices] AppDataContext ctx) =>
+{
+    var modelos = ctx.Modelos.ToList();
+    if (modelos == null || modelos.Count == 0)
+    {
+        return Results.NotFound();
+    }
+    return Results.Ok(modelos);
+});
+
+app.MapGet("/api/modelos/{id}", ([FromRoute] int id, [FromServices] AppDataContext ctx) =>
+{
+    var modelo = ctx.Modelos.Find(id);
+    if (modelo == null)
+    {
+        return Results.NotFound();
+    }
+    return Results.Ok(modelo);
+});
+
 app.Run();

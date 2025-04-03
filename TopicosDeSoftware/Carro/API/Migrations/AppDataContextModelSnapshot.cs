@@ -26,12 +26,58 @@ namespace API.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("ModeloId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ModeloId");
+
                     b.ToTable("Carros");
+                });
+
+            modelBuilder.Entity("API.Models.Modelo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Modelos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Hatch"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Sedan"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "SUV"
+                        });
+                });
+
+            modelBuilder.Entity("API.Models.Carro", b =>
+                {
+                    b.HasOne("API.Models.Modelo", "Modelo")
+                        .WithMany()
+                        .HasForeignKey("ModeloId");
+
+                    b.Navigation("Modelo");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,5 @@
+
+GET http://localhost:5074/api/modelos
+
+###
+GET http://localhost:5074/api/modelos/1
