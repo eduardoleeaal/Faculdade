@@ -82,7 +82,7 @@ class Garagem {
 
     public void adicionarVeiculo(Veiculo v) {
         veiculos.add(v);
-        System.out.println("Veículo adicionado\n");
+        System.out.println("Veículo adicionado");
     }
 
     public void listarTodos(){
@@ -133,7 +133,7 @@ public class SistemaTransporteApp {
         String marca, tipo;
 
         do {
-            System.out.println("1 - Cadastrar ônibus");
+            System.out.println("\n1 - Cadastrar ônibus");
             System.out.println("2 - Cadastrar metrô");
             System.out.println("3 - Listar todos os veículos");
             System.out.println("4 - Listar veículos por tipo");
@@ -173,8 +173,8 @@ public class SistemaTransporteApp {
                     marca = sc.nextLine();
                     System.out.print("Número de vagões: ");
                     nVagoes = sc.nextInt();
-                    sc.nextInt();
-                    System.out.println("Tem ar-condicionado (true/false): ");
+                    sc.nextLine();
+                    System.out.print("Tem ar-condicionado (true/false): ");
                     boolean temAr = sc.nextBoolean();
                     garage.adicionarVeiculo(new Metro(id, ano, marca, nVagoes, temAr));
                     break;
@@ -195,10 +195,10 @@ public class SistemaTransporteApp {
                             System.out.print("--> ");
                             escolha = sc.nextInt();
                             switch (escolha){
-                                case 1:
+                                case 3:
                                     ((Onibus) v).abrirPortas();
                                     break;
-                                case 2:
+                                case 4:
                                     ((Onibus) v).fecharPortas();
                                     break;
                                 default:
