@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,8 +16,8 @@ abstract class Veiculo {
 }
 
 class Onibus extends Veiculo {
-    private String tipo;
-    private int capacidadePassageiros;
+    private final String tipo;
+    private final int capacidadePassageiros;
 
     public Onibus(int id, int ano, String marca, String tipo, int capacidadePassageiros){
         super(id, ano, marca);
@@ -46,8 +45,8 @@ class Onibus extends Veiculo {
 }
 
 class Metro extends Veiculo {
-    private int numeroVagoes;
-    private boolean temArCondicionado;
+    private final int numeroVagoes;
+    private final boolean temArCondicionado;
 
     public Metro(int id, int ano, String marca, int numeroVagoes, boolean temArCondicionado) {
         super(id, ano, marca);
@@ -186,7 +185,6 @@ public class SistemaTransporteApp {
                     garage.listarPorTipo();
                     break;
                 case 5:
-                    int vindex = 1;
                     int escolha;
 
                     for (Veiculo v: garage.veiculos){
@@ -223,7 +221,7 @@ public class SistemaTransporteApp {
                                 case 2:
                                     System.out.print("Quantidade de passageiros desembarque: ");
                                     int qntPassDesem = sc.nextInt();
-                                    ((Metro) v).embarcarPassageiros(qntPassDesem);
+                                    ((Metro) v).desembarcarPassageiros(qntPassDesem);
                                     break;
                                 default:
                                     System.out.println("Escolha incorreta!");
