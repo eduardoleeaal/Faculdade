@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20250403134936_Teste")]
-    partial class Teste
+    [Migration("20250410120548_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,7 +29,7 @@ namespace API.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ModeloId")
+                    b.Property<int>("ModeloId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -78,7 +78,9 @@ namespace API.Migrations
                 {
                     b.HasOne("API.Models.Modelo", "Modelo")
                         .WithMany()
-                        .HasForeignKey("ModeloId");
+                        .HasForeignKey("ModeloId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Modelo");
                 });

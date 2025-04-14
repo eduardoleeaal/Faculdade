@@ -1,5 +1,14 @@
 
 GET http://localhost:5074/api/modelos
 
+
+### Cadastrar Modelo
+POST http://localhost:5074/api/modelos
+Content-Type: application/json
+
+{
+    "Name": "Picape"
+}
+
 ###
 GET http://localhost:5074/api/modelos/1

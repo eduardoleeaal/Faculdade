@@ -1,10 +1,39 @@
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Annotations;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDataContext>();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.EnableAnnotations(); // precisa do namespace Swashbuckle.AspNetCore.Annotations
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "API Carros",
+        Description = "API para gerenciamento de carros e modelos",
+        Contact = new OpenApiContact
+        {
+            Name = "Eduardo Leal",
+            Email = "eduardo.leeal@hotmail.com"
+        },
+        License = new OpenApiLicense
+        {
+            Name = "MIT",
+            Url = new Uri("https://opensource.org/licenses/MIT")
+        }
+    });
+});
+
+
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Exemplo de Endpoint
 app.MapGet("/", () => "Hello World!");
@@ -69,14 +98,27 @@ app.MapDelete("/api/carros/{id}", ([FromRoute] int id,[FromServices] AppDataCont
 
 });
 
-app.MapGet("/api/modelos", ([FromServices] AppDataContext ctx) =>
+app.MapGet("/api/modelos", ([FromQuery] string name, [FromServices] AppDataContext ctx) =>
 {
-    var modelos = ctx.Modelos.ToList();
+    IQueryable<Modelo> queryable = ctx.Modelos.AsNoTracking();
+
+    var modelos = queryable
+        .Where(m => EF.Functions.Like(m.Name.ToLower(), $"%{name.ToLower()}%"))
+        .ToList();
+
     if (modelos == null || modelos.Count == 0)
     {
         return Results.NotFound();
     }
     return Results.Ok(modelos);
+});
+
+app.MapPost("/api/modelos", ([FromServices] AppDataContext ctx, [FromBody] Modelo modelo) =>
+{
+    ctx.Modelos.Add(modelo);
+    ctx.SaveChanges();
+
+    return Results.Created($"/api/modelos/{modelo.Id}", modelo);
 });
 
 app.MapGet("/api/modelos/{id}", ([FromRoute] int id, [FromServices] AppDataContext ctx) =>

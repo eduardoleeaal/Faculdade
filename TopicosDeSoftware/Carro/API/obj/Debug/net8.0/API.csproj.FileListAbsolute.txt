@@ -152,3 +152,9 @@
 /home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/obj/Debug/net8.0/API.csproj.AssemblyReference.cache
 /home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/obj/Debug/net8.0/API.csproj.CopyComplete
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/obj/Debug/net8.0/API.MvcApplicationPartsAssemblyInfo.cs
+/home/leal/Documentos/Faculdade/TopicosDeSoftware/Carro/API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Annotations.dll

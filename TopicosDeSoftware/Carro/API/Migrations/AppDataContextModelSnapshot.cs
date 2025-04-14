@@ -26,7 +26,7 @@ namespace API.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ModeloId")
+                    b.Property<int>("ModeloId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -75,7 +75,9 @@ namespace API.Migrations
                 {
                     b.HasOne("API.Models.Modelo", "Modelo")
                         .WithMany()
-                        .HasForeignKey("ModeloId");
+                        .HasForeignKey("ModeloId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Modelo");
                 });
