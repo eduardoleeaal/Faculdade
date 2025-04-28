@@ -1,0 +1,49 @@
+### Listar todos os produtos
+GET http://localhost:5216/produtos
+
+###
+
+### Buscar produto por ID
+GET http://localhost:5216/produtos/1
+Accept: application/json
+
+###
+
+### Criar novo produto
+POST http://localhost:5216/produtos
+Content-Type: application/json
+
+{
+  "nome": "Notebook Lenovo",
+  "preco": 3499.99,
+  "categoriaId": 1
+}
+
+###
+
+### Atualizar produto existente
+PUT http://localhost:5216/produtos/1
+Content-Type: application/json
+
+{
+  "nome": "Notebook Lenovo Atualizado",
+  "preco": 3299.99,
+  "categoriaId": 1
+}
+
+###
+
+### Deletar produto
+DELETE http://localhost:5216/produtos/1
+
+###
+
+### Listar todas as categorias
+GET http://localhost:5216/categorias
+Accept: application/json
+
+###
+
+### Buscar categoria por ID
+GET http://localhost:5216/categorias/1
+Accept: application/json
