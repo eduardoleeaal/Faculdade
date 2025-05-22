@@ -9,13 +9,13 @@ POST http://localhost:5291/api/categorias
 Content-Type: application/json
 
 {
-    "nome" : "Celulares"
+    "nome" : "Moveis"
 }
 
 ### Alterar categoria
-PUT http://localhost:5291/api/categorias/1
+PUT http://localhost:5291/api/categorias/2
 Content-Type: application/json
 
 {
-    "nome" : "Mantimentos"
+    "nome" : "Eletronicos"
 }
