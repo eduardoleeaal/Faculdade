@@ -1,49 +1,58 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Categoria } from "../../models/Categoria";
-import { Produto } from "../../models/Produto";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Categoria } from '../../models/Categoria';
+import './cadastrar-produto-modulo.css';
+import { error } from 'console';
+import { useParams } from 'react-router-dom';
 
-export default function CadastrarProduto() {
+function CadastrarProduto() {
+    const {id} = useParams();
+
     const [nome, setNome] = useState("");
     const [preco, setPreco] = useState<number>(0);
     const [descricao, setDescricao] = useState("");
     const [quantidade, setQuantidade] = useState<number>(0);
-    const [categoriaId, setCategoriaId] = useState<any>(null);
+    const [categoriaId, setCategoriaId] = useState<any>();
     const [categorias, setCategorias] = useState<Categoria[]>([]);
 
     useEffect(() => {
-        const id = "bec44381-28db-46f0-b26f-f2ded8cc0f99";
         carregarCategorias();
         buscarProdutoPorId(id);
     }, []);
 
-    function buscarProdutoPorId(id: string) {
+    function buscarProdutoPorId(id: any) {
+
+        if(id == null) {
+            return;
+        }
+        
         axios.get(`http://localhost:5291/api/produtos/${id}`)
-            .then(response => {
-                var produto = response.data;
-                setNome(produto.nome);
-                setPreco(produto.preco);
-                setDescricao(produto.descricao);
-                setQuantidade(produto.quantidade);
-                setCategoriaId(produto.categoriaId);
-            })
-            .catch(error => {
-                alert("Erro ao carregar as categorias");
-            });
+        .then( response =>{
+            var produto = response.data;
+            setNome(produto.nome);
+            setPreco(produto.preco);
+            setDescricao(produto.descricao);
+            setQuantidade(produto.quantidade);
+            setCategoriaId(produto.categoriaId);
+        })
+        .catch( (error) => {
+            console.log(error)
+            alert("Erro ao carregar o produto");
+        });
     }
 
     function carregarCategorias() {
         axios.get("http://localhost:5291/api/categorias")
-            .then(response => {
-                setCategorias(response.data);
-                setCategoriaId(response.data[0]?.id);
-            })
-            .catch(error => {
-                alert("Erro ao carregar as categorias");
-            });
+        .then( response =>{
+            setCategorias(response.data);
+            setCategoriaId(response.data[0]?.id);
+        })
+        .catch( () => {
+            alert("Erro ao carregar as categorias");
+        });
     }
 
-    function salvar(e: any) {
+    function salvar (e: any) {
         e.preventDefault();
         const p = {
             nome: nome,
@@ -52,90 +61,104 @@ export default function CadastrarProduto() {
             quantidade: Number(quantidade),
             categoriaId: categoriaId
         }
-        console.log(p);
-        cadastrar(p);
+        if(id == null) {
+            cadastrar(p);
+        } else {
+            alterar(p);
+        }
     }
 
     function cadastrar(produto: any) {
         axios.post("http://localhost:5291/api/produtos", produto)
-            .then(response => {
-                console.log(response);
-                alert("Produto Cadastrado com Sucesso!");
-            })
-            .catch(error => {
-                alert("Ocorreu um erro ao cadastrar o produto");
-            })
+        .then(response => {
+            console.log(response);
+            alert("Produto cadastrado com sucesso");
+        })
+        .catch( error => {
+            alert("Ocorreu um erro ao cadastrar o produtos");
+        })
+    }
+
+    function alterar(produto: any) {
+        axios.put(`http://localhost:5291/api/produtos/${id}`, produto)
+        .then(response => {
+            console.log(response);
+            alert("Produto alterado com sucesso");
+        })
+        .catch( error => {
+            alert("Ocorreu um erro ao cadastrar o produtos");
+        })
     }
 
     return (
-        <div>
-            <h1>Cadastrar Produtos</h1>
+        <div className='cad'>
+            <h1>Cadastrar Produto</h1>
             <form onSubmit={salvar}>
                 <div>
-                    <label htmlFor="nome">Nome</label> <br />
+                    <label htmlFor="nome">Nome</label>
                     <input
                         onChange={(e: any) => setNome(e.target.value)}
                         value={nome}
-                        type="text" id="nome"
+                        type="text"
+                        id="nome"
                         placeholder="Digite o nome do produto"
-                        required />
+                        required/>
                 </div>
 
                 <div>
-                    <label htmlFor="descricao">Descricao</label> <br />
+                    <label htmlFor="descricao">Descrição</label>
                     <textarea
                         onChange={(e: any) => setDescricao(e.target.value)}
                         value={descricao}
                         id="descricao"
                         placeholder="Digite a descrição do produto"
-                        required />
+                        required/>
                 </div>
 
                 <div>
-                    <label htmlFor="quantidade">Quantidade</label> <br />
+                    <label htmlFor="quantidade">Quantidade</label>
                     <input
                         onChange={(e: any) => setQuantidade(e.target.value)}
                         value={quantidade}
                         type="number"
-                        step="1"
-                        min="0"
                         id="quantidade"
-                        placeholder="Digite a quantidade de produtos"
-                        required />
+                        step="1"
+                        placeholder="Digite a quantidade do produto"
+                        required/>
                 </div>
 
                 <div>
-                    <label htmlFor="preco">Preço</label> <br />
+                    <label htmlFor="preco">Preço</label>
                     <input
                         onChange={(e: any) => setPreco(e.target.value)}
                         value={preco}
                         type="number"
-                        step="0.01"
-                        min="0"
                         id="preco"
-                        placeholder="Digite a preço de produtos"
-                        required />
+                        step="0.01"
+                        placeholder="Digite o preço do produto"
+                        required/>
                 </div>
+
                 <div>
-                    <label htmlFor="preco">Categoria</label> <br />
+                    <label htmlFor="categoria">Categoria</label>
                     <select id="categoria"
-                        onChange={(e: any) => setCategoriaId(Number(e.target.value))}
+                        onChange={(e: any) => setCategoriaId(e.target.value)}
                         value={categoriaId} >
-                        {categorias.map((item) => (
-                            <option key={item.id} value={item.id}>
+                        {categorias.map( (item) => (
+                            <option key={item.id} value={item.id} >
                                 {item.nome}
                             </option>
                         ))}
                     </select>
                 </div>
-
+                
                 <button type="submit">
                     Salvar
                 </button>
-
             </form>
         </div>
     );
 
 }
 
+export default CadastrarProduto;

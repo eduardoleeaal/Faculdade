@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import './listar-produto-modulo.css';
 import { Produto } from '../../models/Produto';
+import { Link } from 'react-router-dom';
 
 
 function ListarProdutos() {
@@ -15,23 +16,24 @@ function ListarProdutos() {
 
     function carregarProdutos() {
         axios.get("http://localhost:5291/api/produtos")
-            .then(response => {
-                setProdutos(response.data);
-                console.table(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        .then( response =>{
+            setProdutos(response.data);
+            console.table(response.data);
+        })
+        .catch( () => {
+            alert("error");
+        });
     }
 
     function remover(id: string) {
         axios.delete(`http://localhost:5291/api/produtos/${id}`)
-            .then(() => {
-                alert("Produto removido com sucesso")
-                carregarProdutos();
-            }).catch(error =>
-                alert("Não foi possivel remover o produto")
-            )
+        .then( () => {
+            alert("Produto removido com sucesso");
+            carregarProdutos();
+        })
+        .catch( () => 
+            alert("Não foi possivel remover o produto")
+        )
     }
 
     return (
@@ -56,8 +58,14 @@ function ListarProdutos() {
                             <td>{produto.categoria.nome}</td>
                             <td>{new Date(produto.criadoEm).toLocaleDateString('pt-BR')}</td>
                             <td>
-                                <button className="remover" onClick={() => remover(produto.id)}>Remover</button>
-                                <button className="alterar">Alterar</button>
+                                <button className="remover"
+                                        onClick={() => remover(produto.id)}>
+                                    Remover
+                                </button>
+                                <Link to={`/pages/produtos/alterar/${produto.id}`} className='alterar'>
+                                    Alterar
+                                </Link>
+                                
                             </td>
                         </tr>
                     ))}
